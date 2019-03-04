@@ -7,8 +7,12 @@ class ClassComponent extends Component {
         super(props);
         this.state = {
             date: new Date(),
-            count: 0
+            count: 0,
+            value: '',
+            checkVal: true,
+            selectVal: 0
         }
+        this.changeInputVal = this.changeInputVal.bind(this);
     }
     refresh () {
         this.setState({ date: new Date() })
@@ -27,6 +31,11 @@ class ClassComponent extends Component {
     minusCount (count) {
         this.setState({ count: count - 1 });
     }
+    changeInputVal (e) {
+        const name = e.target.name;
+        const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+        this.setState({ [name]: value })
+    }
     render () {
         if (this.props.disable) {
             return null;
@@ -35,11 +44,22 @@ class ClassComponent extends Component {
             {true && <p>Always start component names with a capital letter.</p>}
             <p>{this.props.value}</p>
             <p>{this.state.date.toLocaleTimeString()}</p>
-            <p>{this.state.count < 5 ? (<button onClick={this.addCount.bind(this, this.state.count)}>add</button>) : (<button onClick={this.minusCount.bind(this, this.state.count)}>minus</button>)}{this.state.count}</p>
+            <p>{this.state.count < 5 ? (
+                <button onClick={this.addCount.bind(this, this.state.count)}>add</button>) : (
+                    <button onClick={this.minusCount.bind(this, this.state.count)}>minus</button>)}
+                {this.state.count}</p>
+            <p><input type='text' name='value' value={this.state.value} onChange={this.changeInputVal}></input>{this.state.value}</p>
+            <p><input type='checkbox' name='checkVal' checked={this.state.checkVal} onChange={this.changeInputVal}></input>{this.state.checkVal}</p>
+            <select value={this.state.selectVal} name='selectVal' onChange={this.changeInputVal}>
+                <option value={0}>0</option>
+                <option value={1}>1</option>
+                <option value={2}>2</option>
+                <option value={3}>3</option>
+            </select>{this.state.selectVal}
         </div>)
     }
 }
-//Component as a function 
+//Component as a function
 function FuncComponent (props) {
     return <p>{props.text ? props.text : 'no text'}</p>;
 }
