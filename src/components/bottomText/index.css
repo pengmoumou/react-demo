@@ -1,0 +1,26 @@
+.bottom-box{
+    background: #1F2531;
+    width: 100%;
+    min-width: 1200px;
+}
+.bottom-text{
+    width:1200px;
+    margin:0 auto;
+    border-top:1px #71757A solid;
+    color:#71757A;
+    font-size: 20px;
+    padding-top:30px;
+    padding-bottom:70px;
+}
+@media screen and (max-width:750px){
+    .bottom-box{
+        width:100vw;
+        min-width:100%;
+    }
+    .bottom-text{
+        width:92%;
+        padding-top:0.3rem;
+        padding-bottom:0.3rem;
+        font-size: 0.2rem;
+    }
+}

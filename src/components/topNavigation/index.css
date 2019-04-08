@@ -1,0 +1,93 @@
+.top-navigation{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    min-width: 1200px;
+    background: #1F2531;
+    color:#fff;
+    padding-top:40px;
+    z-index: 99;
+}
+.navigation-content{
+    width:1200px;
+    margin:0 auto; 
+    display: flex;
+    justify-content: space-between;
+}
+.icon-box img{
+    height: 36px;
+    width:auto;
+    margin-top: -20px;
+}
+.maxfun-icon{
+    padding-right:20px;
+    margin-right: 20px;
+    border-right:1px solid #fff;
+}
+.menu{
+    display: flex;
+    justify-content: space-around;
+    width:60%;
+    
+}
+.menu li{
+    padding-bottom:15px;
+}
+.menu li:hover{
+    color:#00A4FF;
+    /* cursor: pointer; */
+}
+.active{
+    color:#00A4FF;
+    border-bottom: #00A4FF solid 2px;
+}
+.login-btn button{
+    width:116px;
+    height: 37px;
+    text-align: center;
+    line-height: 37px;
+    border:none;
+    outline: none;
+    background: #00A4FF;
+    color: #fff;
+    font-size: 14px; 
+    margin-top:-10px;     
+
+}
+@media screen and (max-width:750px){
+    .top-navigation{
+        width:100vw;
+        min-width:100vw;
+        padding-top:0.3rem;
+        padding-bottom: 0.2rem;
+    }
+    .navigation-content{
+        width:100vw;
+        margin:0;
+    }
+    .icon-box img{
+        height: 0.33rem;
+        width:auto;
+        margin-top:0;
+        /* margin-left:0.3rem; */
+    }
+    .maxfun-icon{
+        margin-left: 0.3rem;
+        padding-right:0.15rem;
+        margin-right: 0.15rem;
+    }
+    .menu{
+        display: none;
+    }
+    .login-btn button{
+        width:auto;
+        height:auto;
+        line-height: 0.28rem;
+        background:none;
+        font-size: 0.2rem; 
+        margin-top:0; 
+        margin-right: 0.3rem;    
+    
+    }
+}
