@@ -3,16 +3,18 @@ import { Router, Route } from 'react-router';
 import createBrowserHistory from "history/createBrowserHistory";
 import App from '../components/app/App';
 import Demo from '../components/demo/index';
+import Game from '../components/game/index';
 
 const history = createBrowserHistory();
 class MyRouter extends Component {
-  render () {
+  render() {
     return (<Router history={history}>
       <div>
         <Route path="/" component={App} />
         <Route path="/demo" component={Demo} />
         {/* The secondary routing */}
         <Route path="/demo/demo0" component={Demo} />
+        <Route path="/game" component={Game} />
       </div>
       {/* for Nested Routes by react-router 2.0 */}
       {/* <Route path="/" component={App}>

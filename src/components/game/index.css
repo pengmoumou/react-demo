@@ -1,0 +1,29 @@
+.square{
+    border: none;
+    border:1px #000 solid;
+    display: inline-block;
+    width:40px;
+    height: 40px;
+    line-height: 40px;
+    background: #fff;
+    outline: none;
+    /* margin:5px; */
+    margin-right: -1px;
+    margin-top: -1px;
+    /* 解决点击后方块下移的问题 */
+    float: left;
+}
+.status {
+    margin-bottom: 20px;
+  }
+.board{
+    margin:50px auto;
+    text-align: center;
+}
+.game-box{
+    width:100%;
+    /* 解决点击后方块下移的问题 */
+    display: flex;
+    flex-direction: row;
+      
+}
