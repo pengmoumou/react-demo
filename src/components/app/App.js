@@ -4,7 +4,7 @@ import './App.css';
 // import { Route } from 'react-router';
 
 class App extends Component {
-  render () {
+  render() {
     return (<div><div>this is my first react demo</div>
       {/* for Nested Routes by react-router 2.0 */}
       {/* <div>{this.props.children}</div> */}

@@ -27,3 +27,10 @@
     flex-direction: row;
       
 }
+.restart-btn{
+    margin-top:20px;
+    border: none;
+    border:1px solid #000;
+    background: #fff;
+    outline: none;
+}

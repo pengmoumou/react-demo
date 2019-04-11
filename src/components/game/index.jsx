@@ -61,6 +61,12 @@ class Board extends Component {
         }
         return null;
     }
+    restart(){
+        this.setState(
+            {squares: Array(9).fill(null),
+            xIsNext: true}
+        )
+    }
     render() {
         // const status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
         const winner = this.calculateWinner(this.state.squares);
@@ -83,6 +89,7 @@ class Board extends Component {
                 <div className="board-row">
                     {this.renderSquare(6)}{this.renderSquare(7)}{this.renderSquare(8)}
                 </div>
+                <div className="restart"><button className="restart-btn" onClick={()=>this.restart()}>重新开始</button></div>
             </div>
         );
     }

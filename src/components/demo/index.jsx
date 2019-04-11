@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './index.scss';
 
 //Component as a class 
 class ClassComponent extends Component {
@@ -14,29 +15,29 @@ class ClassComponent extends Component {
         }
         this.changeInputVal = this.changeInputVal.bind(this);
     }
-    refresh () {
+    refresh() {
         this.setState({ date: new Date() })
     }
-    componentDidMount () {
+    componentDidMount() {
         this.timer = setInterval(() => {
             this.refresh();
         }, 1000);
     }
-    componentWillUnmount () {
+    componentWillUnmount() {
         clearInterval(this.timer);
     }
-    addCount (count) {
+    addCount(count) {
         this.setState({ count: count + 1 });
     }
-    minusCount (count) {
+    minusCount(count) {
         this.setState({ count: count - 1 });
     }
-    changeInputVal (e) {
+    changeInputVal(e) {
         const name = e.target.name;
         const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
         this.setState({ [name]: value })
     }
-    render () {
+    render() {
         if (this.props.disable) {
             return null;
         }
@@ -60,18 +61,18 @@ class ClassComponent extends Component {
     }
 }
 //Component as a function
-function FuncComponent (props) {
+function FuncComponent(props) {
     return <p>{props.text ? props.text : 'no text'}</p>;
 }
 
 class Demo extends Component {
-    render () {
+    render() {
         const numbers = [1, 2, 3, 4];
         const listItems = numbers.map((number, index) =>
             <li key={index}>{number}</li>
         )
         return (<div>
-            <p>this is my first component</p>
+            <p className="red-color">this is my first component</p>
             <ul>{listItems}</ul>
             <ClassComponent value="this is my first props" disable={false}></ClassComponent>
             <FuncComponent text="All React components must act like pure functions with respect to their props."></FuncComponent>
