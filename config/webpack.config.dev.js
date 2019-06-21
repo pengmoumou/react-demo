@@ -319,32 +319,16 @@ module.exports = {
           // This loader doesn't use a "test" so it will catch all modules
           // that fall through the other loaders.
           {
-            loader: require.resolve('file-loader'),
             // Exclude `js` files to keep "css" loader working as it injects
-            // it's runtime that would otherwise processed through "file" loader.
+            // its runtime that would otherwise be processed through "file" loader.
             // Also exclude `html` and `json` extensions so they get processed
             // by webpacks internal loaders.
-            exclude: [/\.(js|mjs|jsx|ts|tsx)$/, /\.html$/, /\.json$/, /\.scss$/],
+            exclude: [/\.(js|mjs|jsx|ts|tsx)$/, /\.html$/, /\.json$/],
+            loader: require.resolve('file-loader'),
             options: {
               name: 'static/media/[name].[hash:8].[ext]',
             },
           },
-          {
-            test: /\.scss$/,
-            // loaders: ['style-loader', 'css-loader', 'sass-loader'],
-            use: [
-              'style-loader',
-              'css-loader',
-              'sass-loader',
-              {
-                loader: 'sass-resources-loader',
-                options: {
-                  // Provide path to the file with resources
-                  resources: './../src/assets/style/common.scss',
-                },
-              },
-            ]
-          }
         ],
       },
       // ** STOP ** Are you adding a new loader?
